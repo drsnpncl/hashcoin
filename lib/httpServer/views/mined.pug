@@ -1,0 +1,18 @@
+extends ../views/layout.pug
+
+block content
+    section.section
+        .container
+            .level
+                .level-left
+                    h2.title.is-3 Transaction
+            hr
+            .hero-body
+                .container.has-text-centered
+                    .columns
+                        .column.is-full
+                            article.tile.is-child.box
+                                p.title Successfully Mined
+                                p.subtitle 
+                                    code
+                                        #{block}

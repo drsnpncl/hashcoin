@@ -1,0 +1,413 @@
+extends layout.pug
+
+block content
+    section.section
+        section.hero.is-light
+          .hero-body
+            .container
+              h1.title
+                | Blockchain
+              h2.subtitle
+                | Hero Functionalities of blockchain
+    section.section
+        section
+          .container
+            .columns.is-centered
+              .column.is-9.is-centered
+                section.info-tiles
+                  .tile.is-ancestor.has-text-centered
+                    .tile.is-parent
+                      article.tile.is-child.box
+                        span.tag.is-info GET
+                        p.subtitle /blockchain/blocks
+                        p
+                          code
+                            | [
+                            | {
+                            | &quot;index&quot;: 0,
+                            | &quot;previousHash&quot;: &quot;string&quot;,
+                            | &quot;timestamp&quot;: 0,
+                            | &quot;data&quot;: {},
+                            | &quot;hash&quot;: &quot;string&quot;
+                            | }
+                            | ]
+                        p Gets all blocks
+                    .tile.is-parent
+                      article.tile.is-child.box
+                        span.tag.is-info GET
+                        p.subtitle /blockchain/blocks/{index}
+                        p
+                          code
+                            | [
+                            | {
+                            | &quot;index&quot;: 0,
+                            | &quot;previousHash&quot;: &quot;string&quot;,
+                            | &quot;timestamp&quot;: 0,
+                            | &quot;data&quot;: {},
+                            | &quot;hash&quot;: &quot;string&quot;
+                            | }
+                            | ]
+                        p Gets a block with index = {index}
+                    .tile.is-parent
+                      article.tile.is-child.box
+                        span.tag.is-info GET
+                        p.subtitle /blockchain/blocks/{hash}
+                        p
+                          code
+                            | [
+                            | {
+                            | &quot;index&quot;: 0,
+                            | &quot;previousHash&quot;: &quot;string&quot;,
+                            | &quot;timestamp&quot;: 0,
+                            | &quot;data&quot;: {},
+                            | &quot;hash&quot;: &quot;string&quot;
+                            | }
+                            | ]
+                        p Gets a block with hash = {hash}
+                  .tile.is-ancestor.has-text-centered
+                    .tile.is-parent
+                      article.tile.is-child.box
+                        span.tag.is-info GET
+                        p.subtitle /blockchain/blocks/latest
+                        p
+                          code
+                            | [
+                            | {
+                            | &quot;index&quot;: 0,
+                            | &quot;previousHash&quot;: &quot;string&quot;,
+                            | &quot;timestamp&quot;: 0,
+                            | &quot;data&quot;: {},
+                            | &quot;hash&quot;: &quot;string&quot;
+                            | }
+                            | ]
+                        p Gets the latest block
+                    .tile.is-parent
+                      article.tile.is-child.box
+                        span.tag.is-warning PUT
+                        p.subtitle /blockchain/blocks/latest
+                        p
+                          code
+                            | [
+                            | {
+                            | &quot;index&quot;: 0,
+                            | &quot;previousHash&quot;: &quot;string&quot;,
+                            | &quot;timestamp&quot;: 0,
+                            | &quot;data&quot;: {},
+                            | &quot;hash&quot;: &quot;string&quot;
+                            | }
+                            | ]
+                        p Update the latest block
+                  .tile.is-ancestor.has-text-centered
+                    .tile.is-parent
+                      article.tile.is-child.box
+                        span.tag.is-info GET
+                        p.subtitle /blockchain/blocks/transactions/{transactionId}
+                        p
+                          code
+                            | [
+                            | {
+                            | &quot;index&quot;: 0,
+                            | &quot;previousHash&quot;: &quot;string&quot;,
+                            | &quot;timestamp&quot;: 0,
+                            | &quot;data&quot;: {},
+                            | &quot;hash&quot;: &quot;string&quot;
+                            | }
+                            | ]
+                        p Get a transaction from some block
+                    .tile.is-parent
+                      article.tile.is-child.box
+                        span.tag.is-info GET
+                        p.subtitle /blockchain/transactions
+                        p
+                          code
+                            | [
+                            | {
+                            | &quot;id&quot;: &quot;string&quot;,
+                            | &quot;data&quot;: {
+                            | &quot;inputs&quot;: [
+                            | {
+                            | &quot;transaction&quot;: &quot;string&quot;,
+                            | &quot;index&quot;: 0,
+                            | &quot;address&quot;: &quot;string&quot;,
+                            | &quot;signature&quot;: &quot;string&quot;
+                            | }
+                            | ],
+                            | &quot;outputs&quot;: [
+                            | {
+                            | &quot;amount&quot;: 0,
+                            | &quot;address&quot;: 0
+                            | }
+                            | ]
+                            | }
+                            | }
+                            | ]
+                        p Get unconfirmed transactions
+                  .tile.is-ancestor.has-text-centered
+                    .tile.is-parent
+                      article.tile.is-child.box
+                        span.tag.is-success POST
+                        p.subtitle /blockchain/transactions
+                        p
+                          code
+                            | [
+                            | {
+                            | &quot;id&quot;: &quot;string&quot;,
+                            | &quot;data&quot;: {
+                            | &quot;inputs&quot;: [
+                            | {
+                            | &quot;transaction&quot;: &quot;string&quot;,
+                            | &quot;index&quot;: 0,
+                            | &quot;address&quot;: &quot;string&quot;,
+                            | &quot;signature&quot;: &quot;string&quot;
+                            | }
+                            | ],
+                            | &quot;outputs&quot;: [
+                            | {
+                            | &quot;amount&quot;: 0,
+                            | &quot;address&quot;: 0
+                            | }
+                            | ]
+                            | }
+                            | }
+                            | ]
+                        p Create a transaction
+                    .tile.is-parent
+                      article.tile.is-child.box
+                        span.tag.is-info GET
+                        p.subtitle /blockchain/transactions/unspent
+                        p
+                          code
+                            | [
+                            | {
+                            | &quot;id&quot;: &quot;string&quot;,
+                            | &quot;data&quot;: {
+                            | &quot;inputs&quot;: [
+                            | {
+                            | &quot;transaction&quot;: &quot;string&quot;,
+                            | &quot;index&quot;: 0,
+                            | &quot;address&quot;: &quot;string&quot;,
+                            | &quot;signature&quot;: &quot;string&quot;
+                            | }
+                            | ],
+                            | &quot;outputs&quot;: [
+                            | {
+                            | &quot;amount&quot;: 0,
+                            | &quot;address&quot;: 0
+                            | }
+                            | ]
+                            | }
+                            | }
+                            | ]
+                        p Get transactions
+    section.section                   
+        section.hero.is-light
+          .hero-body
+            .container
+              h1.title
+                | Operator
+              h2.subtitle
+                | Functionalities of operator
+    section.section
+        section
+          .container
+            .columns.is-centered
+              .column.is-9.is-centered
+                section.info-tiles
+                  .tile.is-ancestor.has-text-centered
+                    .tile.is-parent
+                      article.tile.is-child.box
+                        span.tag.is-info GET
+                        p.subtitle /operator/wallets
+                        p
+                          code
+                            | [
+                            | {
+                            | &quot;id&quot;: &quot;string&quot;,
+                            | &quot;addresses&quot;: [
+                            | &quot;string&quot;
+                            | ]
+                            | }
+                            | ]
+                        p Gets all wallets
+                    .tile.is-parent
+                      article.tile.is-child.box
+                        span.tag.is-success POST
+                        p.subtitle /operator/wallets
+                        p
+                          code
+                            | {
+                            | &quot;id&quot;: &quot;string&quot;,
+                            | &quot;addresses&quot;: [
+                            | &quot;string&quot;
+                            | ]
+                            | }
+                        p Create a wallet from password
+                  .tile.is-ancestor.has-text-centered
+                    .tile.is-parent
+                      article.tile.is-child.box
+                        span.tag.is-info GET
+                        p.subtitle /operator/wallets/{walletId}
+                        p
+                          code
+                            | {
+                            | &quot;id&quot;: &quot;string&quot;,
+                            | &quot;addresses&quot;: [
+                            | &quot;string&quot;
+                            | ]
+                            | }
+                        p Get wallet by id
+                    .tile.is-parent
+                      article.tile.is-child.box
+                        span.tag.is-info GET
+                        p.subtitle /operator/wallets/{walletId}/addresses
+                        p
+                          code
+                            | [
+                            | &quot;string&quot;
+                            | ]
+                        p Gets addresses of {walletId}
+                    .tile.is-parent
+                      article.tile.is-child.box
+                        span.tag.is-info GET
+                        p.subtitle /operator/wallets/{walletId}/addresses
+                        p
+                          code
+                            | {
+                            | &quot;address&quot;: &quot;string&quot;
+                            | }
+                        p Create a new address
+                  .tile.is-ancestor.has-text-centered
+                    .tile.is-parent
+                      article.tile.is-child.box
+                        span.tag.is-success POST
+                        p.subtitle /operator/wallets/{walletId}/transactions
+                        p
+                          code
+                            | {
+                            | &quot;id&quot;: &quot;string&quot;,
+                            | &quot;data&quot;: {
+                            | &quot;inputs&quot;: [
+                            | {
+                            | &quot;transaction&quot;: &quot;string&quot;,
+                            | &quot;index&quot;: 0,
+                            | &quot;address&quot;: &quot;string&quot;,
+                            | &quot;signature&quot;: &quot;string&quot;
+                            | }
+                            | ],
+                            | &quot;outputs&quot;: [
+                            | {
+                            | &quot;amount&quot;: 0,
+                            | &quot;address&quot;: 0
+                            | }
+                            | ]
+                            | }
+                            | }
+                        p
+                        p
+                          code
+                            | {
+                            | &quot;fromAddress&quot;: &quot;string&quot;,
+                            | &quot;toAddress&quot;: &quot;string&quot;,
+                            | &quot;amount&quot;: 0,
+                            | &quot;changeAddress&quot;: &quot;string&quot;
+                            | }
+                        p Get a transaction from some block
+                    .tile.is-parent
+                      article.tile.is-child.box
+                        span.tag.is-info GET
+                        p.subtitle /operator/{addressId}/balance
+                        p
+                          code
+                            | {
+                            | &quot;balance&quot; : 123,
+                            | }
+                        p Gets balance of given address
+    section.section    
+        section.hero.is-light
+          .hero-body
+            .container
+              h1.title
+                | Node
+              h2.subtitle
+                | Functionalities of node
+    section.section
+        section
+          .container
+            .columns.is-centered
+              .column.is-9.is-centered
+                section.info-tiles
+                  .tile.is-ancestor.has-text-centered
+                    .tile.is-parent
+                      article.tile.is-child.box
+                        span.tag.is-info GET
+                        p.subtitle /node/peers
+                        p
+                          code
+                            | [
+                            | {
+                            | &quot;url&quot;: &quot;string&quot;
+                            | }
+                            | ]
+                        p Get all peers connected to node
+                    .tile.is-parent
+                      article.tile.is-child.box
+                        span.tag.is-success POST
+                        p.subtitle /node/peers
+                        p Body: 
+                        p
+                          code
+                            | {
+                            | &quot;url&quot;: &quot;string&quot;
+                            | }
+                        p Connects a new peer to node
+                    .tile.is-parent
+                      article.tile.is-child.box
+                        span.tag.is-info GET
+                        p.subtitle /node/transactions/{transactionId}/confirmations
+                        p
+                          code
+                            | {
+                            | &quot;confirmations&quot;: 0
+                            | }
+                        p Get how many confirmations a block has
+    section.section
+        section.hero.is-light
+          .hero-body
+            .container
+              h1.title
+                | Miner
+              h2.subtitle
+                | Functionalities of miner
+    section.section
+        section
+          .container
+            .columns.is-centered
+              .column.is-9.is-centered
+                section.info-tiles
+                  .tile.is-ancestor.has-text-centered
+                    .tile.is-parent
+                      article.tile.is-child.box
+                        span.tag.is-info GET
+                        p.subtitle /miner/mine
+                        p Checks authenticity of a user
+                    .tile.is-parent
+                      article.tile.is-child.box
+                        span.tag.is-success POST
+                        p.subtitle /miner/mine
+                        p
+                          code
+                            | {
+                            | &quot;index&quot;: 0,
+                            | &quot;previousHash&quot;: &quot;string&quot;,
+                            | &quot;timestamp&quot;: 0,
+                            | &quot;data&quot;: {},
+                            | &quot;hash&quot;: &quot;string&quot;
+                            | }
+                        p Body
+                        p
+                          code
+                            | {
+                            | &quot;rewardAddress&quot;: &quot;string&quot;,
+                            | &quot;feeAddress&quot;: &quot;string&quot;
+                            | }
+                        p Mines a Block

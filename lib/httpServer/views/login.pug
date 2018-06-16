@@ -1,0 +1,27 @@
+extends ../views/layout.pug
+
+block content
+    section.section
+        .container
+            .level
+                .level-left
+                    h2.title.is-3 Login
+            hr
+            .hero-body
+                .container.has-text-centered
+                    .columns
+                        .column.is-half.is-offset-one-quarter
+                            form.form(action= '/login', method='post')
+                                .field
+                                    .control.has-icons-left.has-icons-right
+                                        input.input.is-large(id='walletId', type='text', name='walletId', placeholder='Your Wallet Id')
+                                .field
+                                    .control.has-icons-left.has-icons-right
+                                        input.input.is-large(id='fromAddress', type='text', name='fromAddress', placeholder='Your Public Key')
+                                .field
+                                    .control.has-icons-left.has-icons-right
+                                        input.input.is-large(id='password', type='password', name='password', placeholder='Your Private Key - Password')
+                                .field
+                                    p.control
+                                        button.button.is-success(type='submit')
+                                            | Log-in

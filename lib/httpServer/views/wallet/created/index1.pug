@@ -1,0 +1,83 @@
+doctype html
+html.has-navbar-fixed-top(lang='en')
+  head
+    title Hashcoin - Wallet Created
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css')
+    script(src='https://use.fontawesome.com/releases/v5.0.0/js/all.js', defer='')
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js')
+    style(type='text/css').
+      /* Tooltip container */
+      .tooltip {
+      position: relative;
+      }
+      /* Tooltip text */
+      .tooltip .tooltiptext {
+      visibility: hidden;
+      background-color: black;
+      color: #fff;
+      text-align: center;
+      padding: 5px;
+      border-radius: 6px;
+      top: -5px;
+      left: 105%;
+      word-break: normal;
+      /* Position the tooltip text - see examples below! */
+      position: absolute;
+      z-index: 1;
+      }
+      /* Show the tooltip text when you mouse over the tooltip container */
+      .tooltip:hover .tooltiptext {
+      visibility: visible;
+      }
+  body
+    nav.navbar.is-fixed-top.is-info
+      .container
+        .navbar-menu.is-active
+          .navbar-brand
+            span.navbar-item.title.is-2 Hashcoin
+          .navbar-start
+            a.navbar-item(href='/blockchain') Blockchain
+            a.navbar-item(href='/blockchain/transactions') Unconfirmed Transactions
+            a.navbar-item(href='/wallet/create') Signup
+            a.navbar-item(href='/transaction/wallet') Send Hashcoins
+    section.section
+      .container
+        .level
+          .level-left
+            h2.title.is-3 Wallet
+        hr
+        .hero-body
+          .container.has-text-centered
+            .columns
+              .column.is-half.is-offset-one-quarter
+                .card
+                  .card-content
+                    p.title Wallet Created Successfully!
+                    p.subtitle Wallet Id:
+                    p#p1.subtitle #{wallet.id}
+                    button.button.is-success(onclick="copyToClipboard('#p1')") Copy TEXT 1
+                .card
+                  .card-content
+                    form#makeadd.form(name='makeadd', action='/operator/wallets/#{wallet.id}/addresses', method='post')
+                      .field
+                        .control.has-icons-left.has-icons-right
+                          input#password.input.is-large(type='password', name='password', placeholder='Confirm Password')
+                      .field
+                        p.control
+                          button.button.is-success(type='submit') Submit
+    script.
+      function toggle_visibility(id) {
+      var e = document.getElementById(id);
+      if ( e.style.display == 'none' )
+      e.style.display = null;
+      else
+      e.style.display = 'none';
+      }
+      function copyToClipboard(element) {
+      var $temp = $("<input>");
+      $("body").append($temp);
+      $temp.val($(element).text()).select();
+      document.execCommand("copy");
+      $temp.remove();
+      }

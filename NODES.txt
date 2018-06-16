@@ -1,0 +1,9 @@
+
+node bin/hashcoin.js -p 3001 --name harsh
+
+node bin/hashcoin.js -p 3002 --name darsh --peers http://localhost:3001
+
+node bin/hashcoin.js -p 3003 --name darsh --peers http://localhost:3002
+
+w 2b521d43f47144d7afac1bd9e6ca0a276050948e3a6223fbd433a5a89c429f33
+p 9b04bdab61a1482fa698e2842a0b9e28034d57963b0689e05ff92bd5201085c7

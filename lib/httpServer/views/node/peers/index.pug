@@ -1,0 +1,20 @@
+extends ../../layout.pug
+
+block content
+    section.section
+        .container
+            .level
+                .level-left
+                    h2.title.is-3 Peers
+            hr
+            .columns.is-multiline
+                each peer in peers                    
+                        .column.is-one-quarter
+                            .box
+                                .content.is-small
+                                    p.title.is-4
+                                        | Peer:
+                                    p.subtitle.is-6
+                                        | Hash: 
+                                        code.tooltip
+                                            | #{peer.url}

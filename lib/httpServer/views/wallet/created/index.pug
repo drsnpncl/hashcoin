@@ -1,0 +1,36 @@
+extends ../../layout.pug
+
+block content
+    section.section
+        .container
+            .level
+                .level-left
+                    h2.title.is-3 Wallet
+            hr
+            .hero-body
+                .container.has-text-centered
+                    .columns
+                        .column.is-half.is-offset-one-quarter
+                            .card
+                                .card-content
+                                    p.title
+                                        | Wallet Created Successfully!
+                                    p.subtitle
+                                        | Wallet Id: 
+                                    p#p1.subtitle #{wallet.id}
+                                    button.button.is-success(onclick="copyToClipboard('#p1')") Copy
+                            .card
+                                .card-content
+                                    form.form(name="makeadd" , id="makeadd", action= formAction, method="post")
+                                        .field
+                                            p.control
+                                                button.button.is-success(type='submit')
+                                                    | Get Public Key
+    script.
+      function copyToClipboard(element) {
+      var $temp = $("<input>");
+      $("body").append($temp);
+      $temp.val($(element).text()).select();
+      document.execCommand("copy");
+      $temp.remove();
+      }

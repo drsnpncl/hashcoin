@@ -1,0 +1,31 @@
+extends ../../layout.pug
+
+block content
+    section.section
+        .container
+            .level
+                .level-left
+                    h2.title.is-3 Public Key
+            hr
+            .hero-body
+                .container.has-text-centered
+                    .columns
+                        .column.is-half.is-offset-one-quarter
+                            .card
+                                .card-content
+                                    p.title
+                                        | Public Key Created Successfully!
+                                    p.subtitle
+                                        | Public Key (Address): 
+                                    p#p1.subtitle #{address}
+                                    button.button.is-success(onclick="copyToClipboard('#p1')") Copy
+                    a.button.is-success(href="/dashboard") Dashboard
+                                    
+    script.
+      function copyToClipboard(element) {
+      var $temp = $("<input>");
+      $("body").append($temp);
+      $temp.val($(element).text()).select();
+      document.execCommand("copy");
+      $temp.remove();
+      }

@@ -1,0 +1,26 @@
+extends ../../layout.pug
+
+block content
+    section.section
+        .container
+            .level
+                .level-left
+                    h2.title.is-3 Create Wallet
+            hr
+            .hero-body
+                .container.has-text-centered
+                    .columns
+                        .column.is-half.is-offset-one-quarter
+                            form.form(action='/miner/mine', method='post')
+                                .field
+                                    .control.has-icons-left.has-icons-right
+                                        input.input.is-large(id='address', type='text', name='address', placeholder='Enter Your Public Key')
+                                .field
+                                    p.control
+                                        button.button.is-success(type='submit')
+                                            | Submit
+
+                
+                
+
+

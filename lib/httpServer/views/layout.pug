@@ -1,0 +1,67 @@
+doctype html
+html(lang="en").has-navbar-fixed-top
+    head
+        title Hashcoin - #{pageTitle}
+        meta(name="viewport", content="width=device-width, initial-scale=1")
+        link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css")        
+        script(src="https://use.fontawesome.com/releases/v5.0.0/js/all.js", defer)
+        script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js', defer)
+        style(type='text/css').
+            /* Tooltip container */
+            .tooltip {
+                position: relative;                                
+            }
+
+            /* Tooltip text */
+            .tooltip .tooltiptext {
+                visibility: hidden;                
+                background-color: black;
+                color: #fff;
+                text-align: center;
+                padding: 5px;
+                border-radius: 6px;
+                top: -5px;
+                left: 105%;   
+                word-break: normal;
+            
+                /* Position the tooltip text - see examples below! */
+                position: absolute;
+                z-index: 1;
+            }
+
+            /* Show the tooltip text when you mouse over the tooltip container */
+            .tooltip:hover .tooltiptext {
+                visibility: visible;
+            }
+            .tbox{
+                border:1px solid #b3b3b3;
+                visibility:transparent;
+                margin-top:21px;
+                margin-right:130px;
+                height:30px;
+                width:200px;
+                border-radius:30px;
+            }
+    body
+        nav.navbar.is-fixed-top.is-info
+            .container
+                .navbar-menu.is-active
+                    .navbar-brand
+                        a.navbar-item.title.is-2(href="/") Hashcoin
+                    .navbar-start                        
+                        a.navbar-item(href="/blockchain", class=`${pageTitle=='Blockchain' ? 'is-active' : ''}`) Blockchain
+                        a.navbar-item(href="/blockchain/transactions", class=`${pageTitle=='Unconfirmed Transactions' ? 'is-active' : ''}`) Unconfirmed Transactions
+                        a.navbar-item(href="/operator/wallets/transactions/confirm", class=`${pageTitle=='Confirm Transaction' ? 'is-active' : ''}`) Send Hashcoins
+                        a.navbar-item(href="/miner/mine") Mine
+                        a.navbar-item(href="/dashboard", class=`${pageTitle=='Dashboard' ? 'is-active' : ''}`) Dashboard
+                        a.navbar-item(href="/logout") Logout
+                        
+        block content
+        script.
+            function toggle_visibility(id) {
+                var e = document.getElementById(id);
+                if ( e.style.display == 'none' )
+                    e.style.display = null;
+                else
+                    e.style.display = 'none';
+            }

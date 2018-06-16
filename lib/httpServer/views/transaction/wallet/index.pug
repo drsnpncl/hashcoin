@@ -1,0 +1,21 @@
+extends ../../layout.pug
+
+block content
+    section.section
+        .container
+            .level
+                .level-left
+                    h2.title.is-3 Transaction
+            hr
+            .hero-body
+                .container.has-text-centered
+                    .columns
+                        .column.is-half.is-offset-one-quarter
+                            form.form(action='/operator/wallets/transactions/confirm', method='post')
+                                .field
+                                    .control.has-icons-left.has-icons-right
+                                        input.input.is-large(id='walletid', type='text', name='walletid', placeholder='Your Wallet ID')
+                                .field
+                                    p.control
+                                        button.button.is-success(type='submit')
+                                            | Submit

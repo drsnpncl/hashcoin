@@ -1,0 +1,167 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    title HashWallet - A CryptoCurrency Wallet
+    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css', integrity='sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=', crossorigin='anonymous')
+    link(href='https://fonts.googleapis.com/css?family=Open+Sans', rel='stylesheet')
+    // Bulma Version 0.6.2
+    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css', integrity='sha256-2k1KVsNPRXxZOsXQ8aqcZ9GOOwmJTMoOB5o5Qp1d6/s=', crossorigin='anonymous')
+    link(rel='stylesheet', type='text/css', href='/css/hero.css')
+  body
+    section.hero.is-info.is-medium.is-bold
+      .hero-head
+        nav.navbar
+          .container
+            .navbar-brand
+              a.navbar-item(href='/')
+                h2.title.is-2 HashWallet
+              span.navbar-burger.burger(data-target='navbarMenu')
+                span
+                span
+                span
+            #navbarMenu.navbar-menu
+              .navbar-end
+                a.navbar-item(href="/blockchain")
+                  | Blockchain
+                a.navbar-item(href="/login")
+                  | Login
+                a.navbar-item(href="/api-docs/")
+                  | API
+                span.navbar-item
+                  a.button.is-white.is-outlined.is-small(href='/wallet/create')
+                    span.icon
+                      i.fa.fa-btc
+                    span Create Wallet
+      .hero-body
+        .container.has-text-centered
+          h1.title
+            | What is HashWallet?
+          h2.subtitle
+            | A HashCoin wallet which allows you to interact directly with Blockchain while remaining in full control of user's keys & funds. HashCoin is fully secured cryptocurrency running on a saperate Blockchain.
+    .box.cta
+      p.has-text-centered
+        span.tag.is-primary New 
+        |  A new blockchain based cryptocurrency & wallet in market!!!
+    section.container
+      .columns.features
+        .column.is-4
+          .card.is-shady
+            .card-image.has-text-centered
+              i.fa.fa-connectdevelop
+            .card-content
+              .content
+                h4 Learn About HashCoin
+                p
+                  | Bitcoin is changing the way people think about money. Educate yourself about this ground-breaking payment system.
+        .column.is-4
+          .card.is-shady
+            .card-image.has-text-centered
+              i.fa.fa-id-badge
+            .card-content
+              .content
+                h4 Create A Wallet
+                p
+                  | HashCoin is received, stored, and sent using web-service known as a 
+                  b HashCoin Wallet
+                  | . Create the official HashCoin Wallet for free.
+        .column.is-4
+          .card.is-shady
+            .card-image.has-text-centered
+              i.fa.fa-hashtag
+            .card-content
+              .content
+                h4  Use HashCoins
+                p
+                  | HashCoin makes it easy to send real money quickly to anywhere in the world! HashCoin can also be used to make purchases from a variety of online retailers.
+      .intro.column.is-8.is-offset-2
+        h2.title Digital assets | Better financial system.
+        br
+        p.subtitle
+          | Blockchain is the world's leading software platform for digital assets. Offering the largest production block chain platform in the world, we are using new technology to build a radically better financial system.
+      .sandbox
+        .tile.is-ancestor
+          .tile.is-vertical.is-8
+            .tile
+              .tile.is-parent.is-vertical
+                article.tile.is-child.notification.is-white
+                  p.title What is HashWallet?
+                  p.subtitle Wallet for HashCoins
+                  .content
+                    p HashWallet is a client-side interface.
+                    p
+                      | It allow users to interact directly with the blockchain while remaining in full control of users’ keys & funds.
+                    p It is fully secure and only a user is responsible for his/her security.
+                article.tile.is-child.notification.is-white
+                  p.title Fully Secured Transactions
+                  p.subtitle Tamper it if you can!
+              .tile.is-parent
+                article.tile.is-child.notification.is-white
+                  p.title What is Blockchain?
+                  p.subtitle Decentralized Spreadsheet
+                  .content
+                    p The blockchain is like a huge, global, decentralized spreadsheet
+                    p
+                      | It keeps track of who sent how many coins to whom, and what the balance of every account is.
+                    p
+                      | It is stored and maintained by thousands of people across the globe who have computers.
+                    p
+                      | The blocks in the blockchain are made up of all the individual transactions sent from HashWallet.
+                    p
+                      | When users see their balance or transactions, they’re seeing data on the blockchain, not in our personal systems. That is, there is no centralised database.
+            .tile.is-parent.is-shady
+              article.tile.is-child.notification.is-white
+                p.title Distributed Network
+                p.subtitle A peer-to-peer network
+                figure.image.is-4by3
+                  img(src='https://blockchain.info/wallet/img/bitcoin-network-35cf9306188c9bc7354c0528f079d997d6845d34.svg')
+          .tile.is-parent.is-shady
+            article.tile.is-child.notification.is-white
+              .content
+                p.title Why HashWallet?
+                p.subtitle Be Your Own Bank
+                .content
+                  p
+                    | When we open an account with a bank, they create an account for us in their system.
+                  p
+                    | The bank keeps track of our personal information, account passwords, balances, transactions, and ultimately our money.
+                  p
+                    | The bank charges fees to manage our account and provide services, like refunding transactions when your card gets stolen.
+                  p
+                    | The bank allows us to write a cheque or charge our debit card to send money, go online (or ATM) to check your balance, reset your password, and get a new debit card if we lose it.
+                  p
+                    | We have an account with the bank and they decide how much money we can send, where we can send it, and how long to hold on a suspicious deposit. All for a fee.
+                  p
+                    | When user create an account on HashWallet he/she is generating a cryptographic set of numbers:
+                  p
+                    ul
+                      li PRIVATE KEY And
+                      li PUBLIC KEY
+                  p
+                    | Private Key is like a unique password for your account. Users don’t need any username, password or email for transaction only private key is required.
+                  p
+                    | Public key is like an address. If user send its public key to someone, they can send user HashCoins. Whereas, if user send its private key to someone, they now have full control of user’s account.
+        .tile.is-ancestor
+          .tile.is-parent
+            article.tile.is-child.notification.is-white
+              p.title Open Source Web-Service
+              p.subtitle Learn Blockchain from the project
+              .content
+                p Fully Modular Project, Easy to Understand.
+          .tile.is-parent.is-8.is-shady
+            article.tile.is-child.notification.is-white
+              p.title Rich API Support
+              p.subtitle Use HashWallet Blockchain API
+              .content
+                p
+                  | Developers! You can use HashWallet API and make your own Blockchain based applications! Integrate with your websites, applications & softwares.
+    footer.footer
+      .container
+        .content.has-text-centered
+          p
+            strong HashWallet
+          p by Darshan Panchal & Harsh Patel. 
+          p
+            | The open-source blockchain based web-service developed in Computer Science Deptt of FoTE, The MS University of Baroda

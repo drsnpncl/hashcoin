@@ -1,0 +1,23 @@
+extends ../../layout.pug
+
+block content
+    section.section
+        .container
+            .level
+                .level-left
+                    h2.title.is-3 Wallet
+            hr
+            .hero-body
+                .container.has-text-centered
+                    .columns
+                        .column.is-half.is-offset-one-quarter
+                            .card
+                                .card-content
+                                    p.title
+                                        |  Transaction approved! !
+                                    p.subtitle
+                                        | From : #{transaction.data.inputs[0].address}
+                                    p.subtitle
+                                        | To : #{transaction.data.outputs[0].address}
+                                    p.subtitle
+                                        | Amount : #{transaction.data.outputs[0].amount}

@@ -1,0 +1,143 @@
+doctype html
+html(lang="en")
+    head
+        title HashCoin
+        meta(name="viewport", content="width=device-width, initial-scale=1")
+        link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css")
+        link(rel="stylesheet", href="/css/landing.css")        
+        script(src="https://use.fontawesome.com/releases/v5.0.0/js/all.js", defer)        
+        style(type='text/css').
+            /* Tooltip container */
+            .tooltip {
+                position: relative;                                
+            }
+
+            /* Tooltip text */
+            .tooltip .tooltiptext {
+                visibility: hidden;                
+                background-color: black;
+                color: #fff;
+                text-align: center;
+                padding: 5px;
+                border-radius: 6px;
+                top: -5px;
+                left: 105%;   
+                word-break: normal;
+            
+                /* Position the tooltip text - see examples below! */
+                position: absolute;
+                z-index: 1;
+            }
+
+            /* Show the tooltip text when you mouse over the tooltip container */
+            .tooltip:hover .tooltiptext {
+                visibility: visible;
+            }
+    body
+        section.hero.is-info.is-fullheight
+            .hero-head
+                header.navbar
+                    .container
+                        .navbar-brand
+                            a.navbar-item
+                                span.navbar-item.title.is-2 HashCoin
+                            span.navbar-burger.burger(data-target='navbarMenuHeroC')
+                                span
+                                span
+                                span
+                        #navbarMenuHeroC.navbar-menu
+                            .navbar-end
+                                a.navbar-item.is-active
+                                    | Home
+                                a.navbar-item(href="/blockchain") 
+                                    | Blockchain
+                                a.navbar-item(href="/login") Login
+                                a.navbar-item(href="/api-docs/") API
+                                span.navbar-item
+                                    a.button.is-info.is-inverted(href="/wallet/create")
+                                        span.icon
+                                            i.fab.fa-btc
+                                        span Get A Free Wallet
+            .hero-body
+                .container.has-text-centered
+                    h1.title
+                        | HashWallet
+                    h2.subtitle
+                        | A HashCoin wallet which allows you to interact directly with Blockchain while remaining in full control of user&apos;s keys &amp; funds. HashCoin is fully secured cryptocurrency running on a saperate Blockchain.
+        .box.cta
+            p.has-text-centered
+                span.tag.is-primary New
+                |  A new blockchain based cryptocurrency & wallet in market!!!
+        section.container
+            .columns.features
+                .column.is-4
+                    .card.is-shady
+                        .card-content
+                            .content
+                                h4 What is HashWallet? 
+                                p
+                                    | HashWallet is a client-side interface.
+                                p
+                                    | It allow users to interact directly with the blockchain while remaining in full control of users&rsquo; keys &amp; funds.
+                                p
+                                    | It is fully secure and only a user is responsible for his/her security.
+                    .card.is-shady
+                        .card-content
+                            .content            
+                                h4  What is Blockchain?  
+                                p The blockchain is like a huge, global, decentralized spreadsheet
+                                p
+                                  | It keeps track of who sent how many coins to whom, and what the balance of
+                                  | every account is.
+                                p
+                                  | It is stored and maintained by thousands of people across the globe who have
+                                  | computers.
+                                p
+                                  | The blocks in the blockchain are made up of all the individual transactions sent
+                                  | from HashWallet.
+                                p
+                                  | When users see their balance or transactions, they&rsquo;re seeing data on the
+                                  | blockchain, not in our personal systems. That is, there is no centralised database.
+                .column.is-4
+                    .card.is-shady
+                        .card-content
+                            .content
+                                h4 Why HashWallet?
+                                p
+                                  | When we open an account with a bank, they create an account for us in their system.
+                                p
+                                  | The bank keeps track of our personal information, account passwords, balances,
+                                  | transactions, and ultimately our money.
+                                p
+                                  | The bank charges fees to manage our account and provide services, like refunding
+                                  | transactions when your card gets stolen.
+                                p
+                                  | The bank allows us to write a cheque or charge our debit card to send money, go
+                                  | online (or ATM) to check your balance, reset your password, and get a new debit
+                                  | card if we lose it.
+                                p
+                                  | We have an account with the bank and they decide how much money we can send,
+                                  | where we can send it, and how long to hold on a suspicious deposit. All for a fee.
+                .column.is-4
+                    .card.is-shady
+                        .card-content
+                            .content
+                                h4  How to Transfer HashCoins?  
+                                p
+                                  | When user create an account on HashWallet he/she is generating a cryptographic
+                                  | set of numbers:
+                                  ul
+                                    li PRIVATE KEY And
+                                    li PUBLIC KEY
+                                p
+                                  | Private Key is like a unique password for your account. Users don&rsquo;t need any
+                                  | username, password or email for transaction only private key is required.
+                                p
+                                  | Public key is like an address. If user send its public key to someone, they can send
+                                  | user HashCoins. Whereas, if user send its private key to someone, they now have
+                                  | full control of user&rsquo;s account.
+            .intro.column.is-8.is-offset-2.has-text-centered
+                h2.title Digital assets | Better financial system.
+                br
+                p.subtitle
+                    | Blockchain is the world's leading software platform for digital assets. Offering the largest production block chain platform in the world, we are using new technology to build a radically better financial system.
